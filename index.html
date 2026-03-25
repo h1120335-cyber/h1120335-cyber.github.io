@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的五彩學習歷程 | My Vibrant Portfolio</title>
+    <title>我的清新學習歷程 | My Soft Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Fredoka+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --bg-color: #ffffff;
-            --primary-pink: #ff9ff3;
-            --primary-yellow: #feca57;
-            --primary-blue: #48dbfb;
-            --primary-green: #1dd1a1;
-            --text-dark: #2f3542;
-            --text-gray: #57606f;
+            /* 溫和的馬卡龍色調變數 */
+            --bg-body: #f7fbfe;
+            --soft-pink: #fce4ec;
+            --soft-yellow: #fff9c4;
+            --soft-blue: #e3f2fd;
+            --soft-green: #e8f5e9;
+            --accent-pink: #f06292;
+            --accent-blue: #64b5f6;
+            --accent-green: #81c784;
+            --text-dark: #455a64; /* 深灰藍，比純黑溫柔 */
+            --text-gray: #78909c;
         }
 
         * {
@@ -26,12 +30,12 @@
         }
 
         body {
-            background-color: #f0f2f5;
+            background-color: var(--bg-body);
             color: var(--text-dark);
             overflow-x: hidden;
         }
 
-        /* 🌈 五彩繽紛背景動畫 */
+        /* 🌸 背景動態光暈（顏色調淡） */
         .background-blobs {
             position: fixed;
             top: 0;
@@ -39,28 +43,28 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            filter: blur(80px);
-            opacity: 0.6;
+            filter: blur(100px);
+            opacity: 0.4; /* 降低透明度 */
         }
 
         .blob {
             position: absolute;
             border-radius: 50%;
-            animation: move 20s infinite alternate;
+            animation: move 25s infinite alternate ease-in-out;
         }
 
-        .blob1 { width: 400px; height: 400px; background: var(--primary-pink); top: -100px; left: -100px; }
-        .blob2 { width: 350px; height: 350px; background: var(--primary-blue); bottom: -50px; right: -50px; animation-delay: -5s; }
-        .blob3 { width: 300px; height: 300px; background: var(--primary-yellow); top: 40%; left: 30%; animation-delay: -10s; }
+        .blob1 { width: 450px; height: 450px; background: var(--soft-pink); top: -100px; left: -50px; }
+        .blob2 { width: 400px; height: 400px; background: var(--soft-blue); bottom: -50px; right: -50px; animation-delay: -7s; }
+        .blob3 { width: 350px; height: 350px; background: var(--soft-yellow); top: 30%; left: 25%; animation-delay: -12s; }
 
         @keyframes move {
-            from { transform: translate(0, 0) rotate(0deg); }
-            to { transform: translate(100px, 100px) rotate(360deg); }
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(80px, 50px) scale(1.1); }
         }
 
-        /* 導覽列 */
+        /* 導覽列：毛玻璃感 */
         nav {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(15px);
             position: fixed;
             width: 100%;
@@ -69,27 +73,27 @@
             display: flex;
             justify-content: center;
             padding: 1rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
         }
 
         nav a {
-            margin: 0 20px;
+            margin: 0 15px;
             text-decoration: none;
             color: var(--text-dark);
             font-weight: 700;
             transition: 0.3s;
-            padding: 5px 15px;
-            border-radius: 20px;
+            padding: 8px 18px;
+            border-radius: 15px;
         }
 
         nav a:hover {
-            background: var(--primary-blue);
-            color: white;
+            background: var(--soft-blue);
+            color: var(--accent-blue);
         }
 
         /* 標題區塊 */
         header {
-            height: 60vh;
+            height: 55vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -99,103 +103,111 @@
         }
 
         header h1 {
-            font-family: 'Fredoka One', cursive; /* 圓滾滾的活潑字體 */
-            font-size: 4rem;
+            font-family: 'Fredoka One', cursive;
+            font-size: 3.5rem;
             color: var(--text-dark);
-            margin-bottom: 10px;
-            text-shadow: 4px 4px 0px var(--primary-yellow);
+            margin-bottom: 15px;
+            /* 調整陰影顏色更柔和 */
+            text-shadow: 3px 3px 0px var(--soft-yellow);
         }
 
         header p {
-            font-size: 1.4rem;
-            background: linear-gradient(90deg, #ff9ff3, #48dbfb);
-            color: white;
-            padding: 5px 20px;
+            font-size: 1.2rem;
+            background: linear-gradient(90deg, #f8bbd0, #b3e5fc);
+            color: #546e7a;
+            font-weight: bold;
+            padding: 8px 25px;
             border-radius: 50px;
             display: inline-block;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
         }
 
         .container {
             max-width: 1100px;
-            margin: 0 auto 100px;
+            margin: 0 auto 80px;
             padding: 0 20px;
         }
 
         .section-title {
-            font-size: 2.2rem;
-            margin: 60px 0 30px;
+            font-size: 1.8rem;
+            margin: 80px 0 35px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-weight: 700;
         }
 
-        .section-title i { margin-right: 15px; }
+        .section-title i { margin-right: 12px; font-size: 1.5rem; }
 
-        /* 彩色卡片設計 */
+        /* 卡片設計 */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 30px;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 4px solid transparent;
-            transition: all 0.3s ease;
-            overflow: hidden;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 25px;
+            padding: 25px;
+            box-shadow: 0 15px 35px rgba(144, 164, 174, 0.12);
+            border: 2px solid transparent; /* 預設無邊框 */
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         .card:hover {
-            transform: scale(1.05) rotate(1deg);
-            background: #fff;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transform: translateY(-10px);
+            background: #ffffff;
+            box-shadow: 0 20px 45px rgba(144, 164, 174, 0.2);
         }
 
-        /* 不同區塊給予不同邊框色 */
-        #comp-grid .card:hover { border-color: var(--primary-pink); }
-        #club-grid .card:hover { border-color: var(--primary-blue); }
-        #self-grid .card:hover { border-color: var(--primary-green); }
+        /* 根據區塊調整懸停邊框色 */
+        #comp-grid .card:hover { border-color: var(--soft-pink); }
+        #club-grid .card:hover { border-color: var(--soft-blue); }
+        #self-grid .card:hover { border-color: var(--soft-green); }
 
         .card-image {
             width: 100%;
-            height: 180px;
-            border-radius: 20px;
+            height: 190px;
+            border-radius: 18px;
             overflow: hidden;
-            margin-bottom: 15px;
-            border: 1px solid #eee;
+            margin-bottom: 20px;
+            background: #f1f3f4;
         }
 
         .card-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: 0.5s;
         }
 
+        .card:hover .card-image img {
+            transform: scale(1.08);
+        }
+
+        /* 標籤樣式 */
         .tag {
             display: inline-block;
-            padding: 4px 12px;
+            padding: 4px 14px;
             border-radius: 10px;
             font-size: 0.8rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: white;
+            font-weight: 700;
+            margin-bottom: 12px;
         }
 
-        .tag-pink { background: var(--primary-pink); }
-        .tag-blue { background: var(--primary-blue); }
-        .tag-green { background: var(--primary-green); }
+        .tag-pink { background: var(--soft-pink); color: var(--accent-pink); }
+        .tag-blue { background: var(--soft-blue); color: var(--accent-blue); }
+        .tag-green { background: var(--soft-green); color: var(--accent-green); }
 
-        .card h3 { margin-bottom: 10px; font-size: 1.4rem; }
-        .card p { color: var(--text-gray); font-size: 0.95rem; }
+        .card h3 { margin-bottom: 10px; font-size: 1.3rem; color: #37474f; }
+        .card p { color: var(--text-gray); font-size: 0.95rem; line-height: 1.6; }
 
-        /* 捲動動畫 */
+        /* 動畫 */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: 0.6s ease-out;
+            transform: translateY(25px);
+            transition: 0.8s ease-out;
         }
         .reveal.active {
             opacity: 1;
@@ -204,9 +216,10 @@
 
         footer {
             text-align: center;
-            padding: 50px;
-            font-weight: bold;
+            padding: 60px;
+            font-weight: 500;
             color: var(--text-gray);
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -219,69 +232,70 @@
     </div>
 
     <nav>
-        <a href="#comp">🏆 競賽</a>
-        <a href="#club">🎸 社團</a>
-        <a href="#self">💡 自主學習</a>
+        <a href="#comp">競賽成果</a>
+        <a href="#club">社團活動</a>
+        <a href="#self">自主學習</a>
     </nav>
 
     <header>
-        <h1>薇閣六年學習歷程</h1>
-        <p>繽紛的高中生活實錄 ✨</p>
+        <h1>陳昱翔的學習歷程</h1>
+        <p>在這裡，紀錄成長的每一個瞬間 🌿</p>
     </header>
 
     <div class="container">
         
-        <h2 id="comp" class="section-title" style="color: #ef5777;"><i class="fas fa-medal"></i> 競賽成果</h2>
+        <h2 id="comp" class="section-title" style="color: var(--accent-pink);"><i class="fas fa-medal"></i> 競賽成果</h2>
         <div id="comp-grid" class="grid reveal">
             <div class="card">
                 <div class="card-image">
-                    <img src="https://via.placeholder.com/400x300/ff9ff3/ffffff?text=Competition+Photo" alt="競賽照片">
+                    <img src="https://images.unsplash.com/photo-1523240715630-9978a991aa41?auto=format&fit=crop&w=600&q=80" alt="競賽">
                 </div>
-                <span class="tag tag-pink">數理類</span>
-                <h3>學科能力競賽</h3>
-                <p>挑戰自我極限，在解題過程中發現科學的樂趣。</p>
+                <span class="tag tag-pink">COMPETITION</span>
+                <h3>英語能力測驗檢定</h3>
+                <p>在解題過程中挑戰思考深度，學會從失敗中理出頭緒，發現英語世界的奧妙。</p>
             </div>
             <div class="card">
                 <div class="card-image">
-                    <img src="https://via.placeholder.com/400x300/ff9ff3/ffffff?text=Design+Photo" alt="設計照片">
+                    <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80" alt="藝術">
                 </div>
-                <span class="tag tag-pink">藝術類</span>
-                <h3>海報設計大賽</h3>
-                <p>將繽紛的色彩轉化為視覺力量，獲得優等獎項。</p>
+                <span class="tag tag-pink">DESIGN</span>
+                <h3>Arduino作品設計</h3>
+                <p>嘗試將抽象的想法具象化，設計生活實用和對環境有益的專題。</p>
             </div>
         </div>
 
-        <h2 id="club" class="section-title" style="color: #0fbcf9;"><i class="fas fa-star"></i> 社團活動</h2>
+        <h2 id="club" class="section-title" style="color: var(--accent-blue);"><i class="fas fa-star"></i> 社團活動</h2>
         <div id="club-grid" class="grid reveal">
             <div class="card">
                 <div class="card-image">
-                    <img src="https://via.placeholder.com/400x300/48dbfb/ffffff?text=Club+Photo" alt="社團照片">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80" alt="社團">
                 </div>
-                <span class="tag tag-blue">大傳社</span>
-                <h3>影像剪輯組長</h3>
-                <p>與團員一起熬夜剪片，創作出屬於我們的青春紀錄。</p>
+                <span class="tag tag-blue">CLUB LIFE</span>
+                <h3>籃球社社長</h3>
+                <p>帶領同學一起精進籃球實力，在球場上揮灑熱血的汗水!。</p>
             </div>
         </div>
 
-        <h2 id="self" class="section-title" style="color: #05c46b;"><i class="fas fa-rocket"></i> 自主學習</h2>
+        <h2 id="self" class="section-title" style="color: var(--accent-green);"><i class="fas fa-rocket"></i> 自主學習</h2>
         <div id="self-grid" class="grid reveal">
             <div class="card">
                 <div class="card-image">
-                    <img src="https://via.placeholder.com/400x300/1dd1a1/ffffff?text=Learning+Photo" alt="學習照片">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="程式">
                 </div>
-                <span class="tag tag-green">程式設計</span>
-                <h3>Web 開發初體驗</h3>
-                <p>自主學習 HTML/CSS，從一張白紙到做出現在這個網頁！</p>
+                <span class="tag tag-green">LEARNING</span>
+                <h3>網頁開發初探</h3>
+                <p>自主研究 HTML 與 CSS，將這段學習旅程轉化為這個網站，享受從無到有的成就感。</p>
             </div>
         </div>
 
     </div>
 
     <footer>
-        <p>🌈 Keep Growing, Keep Shining | 2026 </p>
+        <p>✨ Stay Curious, Stay Bright | 2026 Portfolio</p>
     </footer>
 
     <script>
+        // 偵測捲動動畫
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
